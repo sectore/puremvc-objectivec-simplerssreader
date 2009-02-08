@@ -1,0 +1,570 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		040CE1680F3E125B00FCABD0 /* PostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040CE1670F3E125B00FCABD0 /* PostViewController.xib */; };
+		040CE2320F3E1E9600FCABD0 /* ApplicationFacade.m in Sources */ = {isa = PBXBuildFile; fileRef = 040CE2170F3E1E9500FCABD0 /* ApplicationFacade.m */; };
+		040CE2330F3E1E9600FCABD0 /* StartupCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 040CE21A0F3E1E9500FCABD0 /* StartupCommand.m */; };
+		040CE2340F3E1E9600FCABD0 /* BlogProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 040CE21D0F3E1E9500FCABD0 /* BlogProxy.m */; };
+		040CE2350F3E1E9600FCABD0 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = 040CE2200F3E1E9500FCABD0 /* Entry.m */; };
+		040CE2360F3E1E9600FCABD0 /* BlogService.m in Sources */ = {isa = PBXBuildFile; fileRef = 040CE2240F3E1E9500FCABD0 /* BlogService.m */; };
+		040CE2370F3E1E9600FCABD0 /* FormatterUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 040CE2270F3E1E9500FCABD0 /* FormatterUtil.m */; };
+		040CE2380F3E1E9600FCABD0 /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040CE22B0F3E1E9600FCABD0 /* PostViewController.m */; };
+		040CE2390F3E1E9600FCABD0 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040CE22D0F3E1E9600FCABD0 /* RootViewController.m */; };
+		040CE23A0F3E1E9600FCABD0 /* PostViewMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 040CE22F0F3E1E9600FCABD0 /* PostViewMediator.m */; };
+		040CE23B0F3E1E9600FCABD0 /* RootViewMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 040CE2310F3E1E9600FCABD0 /* RootViewMediator.m */; };
+		040CE23D0F3E1EDE00FCABD0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 040CE23C0F3E1EDE00FCABD0 /* Localizable.strings */; };
+		040CE2420F3E1F9000FCABD0 /* BlogEntryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040CE2410F3E1F9000FCABD0 /* BlogEntryCell.xib */; };
+		040CE24A0F3E20EB00FCABD0 /* BlogEntryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 040CE2490F3E20EB00FCABD0 /* BlogEntryCell.m */; };
+		040CE3400F3E484200FCABD0 /* icon_app.png in Resources */ = {isa = PBXBuildFile; fileRef = 040CE33F0F3E484200FCABD0 /* icon_app.png */; };
+		040CE58A0F3EE99300FCABD0 /* Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 040CE5640F3EE99300FCABD0 /* Controller.m */; };
+		040CE58B0F3EE99300FCABD0 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 040CE5660F3EE99300FCABD0 /* Model.m */; };
+		040CE58C0F3EE99300FCABD0 /* View.m in Sources */ = {isa = PBXBuildFile; fileRef = 040CE5680F3EE99300FCABD0 /* View.m */; };
+		040CE58D0F3EE99300FCABD0 /* MacroCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 040CE5770F3EE99300FCABD0 /* MacroCommand.m */; };
+		040CE58E0F3EE99300FCABD0 /* SimpleCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 040CE5790F3EE99300FCABD0 /* SimpleCommand.m */; };
+		040CE58F0F3EE99300FCABD0 /* Facade.m in Sources */ = {isa = PBXBuildFile; fileRef = 040CE57C0F3EE99300FCABD0 /* Facade.m */; };
+		040CE5900F3EE99300FCABD0 /* Mediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 040CE57F0F3EE99300FCABD0 /* Mediator.m */; };
+		040CE5910F3EE99300FCABD0 /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 040CE5820F3EE99300FCABD0 /* Notification.m */; };
+		040CE5920F3EE99300FCABD0 /* Notifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 040CE5840F3EE99300FCABD0 /* Notifier.m */; };
+		040CE5930F3EE99300FCABD0 /* Observer.m in Sources */ = {isa = PBXBuildFile; fileRef = 040CE5860F3EE99300FCABD0 /* Observer.m */; };
+		040CE5940F3EE99300FCABD0 /* Proxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 040CE5890F3EE99300FCABD0 /* Proxy.m */; };
+		1D3623260D0F684500981E51 /* SimpleRSSReaderPureMVCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* SimpleRSSReaderPureMVCAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		040CE1670F3E125B00FCABD0 /* PostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostViewController.xib; sourceTree = "<group>"; };
+		040CE2160F3E1E9500FCABD0 /* ApplicationFacade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationFacade.h; sourceTree = "<group>"; };
+		040CE2170F3E1E9500FCABD0 /* ApplicationFacade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationFacade.m; sourceTree = "<group>"; };
+		040CE2190F3E1E9500FCABD0 /* StartupCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartupCommand.h; sourceTree = "<group>"; };
+		040CE21A0F3E1E9500FCABD0 /* StartupCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartupCommand.m; sourceTree = "<group>"; };
+		040CE21C0F3E1E9500FCABD0 /* BlogProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogProxy.h; sourceTree = "<group>"; };
+		040CE21D0F3E1E9500FCABD0 /* BlogProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogProxy.m; sourceTree = "<group>"; };
+		040CE21F0F3E1E9500FCABD0 /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = "<group>"; };
+		040CE2200F3E1E9500FCABD0 /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
+		040CE2210F3E1E9500FCABD0 /* Notifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notifications.h; sourceTree = "<group>"; };
+		040CE2230F3E1E9500FCABD0 /* BlogService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogService.h; sourceTree = "<group>"; };
+		040CE2240F3E1E9500FCABD0 /* BlogService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogService.m; sourceTree = "<group>"; };
+		040CE2260F3E1E9500FCABD0 /* FormatterUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormatterUtil.h; sourceTree = "<group>"; };
+		040CE2270F3E1E9500FCABD0 /* FormatterUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormatterUtil.m; sourceTree = "<group>"; };
+		040CE22A0F3E1E9500FCABD0 /* PostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostViewController.h; sourceTree = "<group>"; };
+		040CE22B0F3E1E9600FCABD0 /* PostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostViewController.m; sourceTree = "<group>"; };
+		040CE22C0F3E1E9600FCABD0 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		040CE22D0F3E1E9600FCABD0 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		040CE22E0F3E1E9600FCABD0 /* PostViewMediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostViewMediator.h; sourceTree = "<group>"; };
+		040CE22F0F3E1E9600FCABD0 /* PostViewMediator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostViewMediator.m; sourceTree = "<group>"; };
+		040CE2300F3E1E9600FCABD0 /* RootViewMediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewMediator.h; sourceTree = "<group>"; };
+		040CE2310F3E1E9600FCABD0 /* RootViewMediator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewMediator.m; sourceTree = "<group>"; };
+		040CE23C0F3E1EDE00FCABD0 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		040CE2410F3E1F9000FCABD0 /* BlogEntryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlogEntryCell.xib; sourceTree = "<group>"; };
+		040CE2480F3E20EB00FCABD0 /* BlogEntryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogEntryCell.h; sourceTree = "<group>"; };
+		040CE2490F3E20EB00FCABD0 /* BlogEntryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogEntryCell.m; sourceTree = "<group>"; };
+		040CE33F0F3E484200FCABD0 /* icon_app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_app.png; sourceTree = "<group>"; };
+		040CE5630F3EE99300FCABD0 /* Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
+		040CE5640F3EE99300FCABD0 /* Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Controller.m; sourceTree = "<group>"; };
+		040CE5650F3EE99300FCABD0 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		040CE5660F3EE99300FCABD0 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
+		040CE5670F3EE99300FCABD0 /* View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View.h; sourceTree = "<group>"; };
+		040CE5680F3EE99300FCABD0 /* View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = View.m; sourceTree = "<group>"; };
+		040CE56A0F3EE99300FCABD0 /* ICommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICommand.h; sourceTree = "<group>"; };
+		040CE56B0F3EE99300FCABD0 /* IController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IController.h; sourceTree = "<group>"; };
+		040CE56C0F3EE99300FCABD0 /* IFacade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFacade.h; sourceTree = "<group>"; };
+		040CE56D0F3EE99300FCABD0 /* IMediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMediator.h; sourceTree = "<group>"; };
+		040CE56E0F3EE99300FCABD0 /* IModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IModel.h; sourceTree = "<group>"; };
+		040CE56F0F3EE99300FCABD0 /* INotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INotification.h; sourceTree = "<group>"; };
+		040CE5700F3EE99300FCABD0 /* INotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INotifier.h; sourceTree = "<group>"; };
+		040CE5710F3EE99300FCABD0 /* IObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IObserver.h; sourceTree = "<group>"; };
+		040CE5720F3EE99300FCABD0 /* IProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IProxy.h; sourceTree = "<group>"; };
+		040CE5730F3EE99300FCABD0 /* IView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IView.h; sourceTree = "<group>"; };
+		040CE5760F3EE99300FCABD0 /* MacroCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroCommand.h; sourceTree = "<group>"; };
+		040CE5770F3EE99300FCABD0 /* MacroCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MacroCommand.m; sourceTree = "<group>"; };
+		040CE5780F3EE99300FCABD0 /* SimpleCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleCommand.h; sourceTree = "<group>"; };
+		040CE5790F3EE99300FCABD0 /* SimpleCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleCommand.m; sourceTree = "<group>"; };
+		040CE57B0F3EE99300FCABD0 /* Facade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Facade.h; sourceTree = "<group>"; };
+		040CE57C0F3EE99300FCABD0 /* Facade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Facade.m; sourceTree = "<group>"; };
+		040CE57E0F3EE99300FCABD0 /* Mediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mediator.h; sourceTree = "<group>"; };
+		040CE57F0F3EE99300FCABD0 /* Mediator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mediator.m; sourceTree = "<group>"; };
+		040CE5810F3EE99300FCABD0 /* Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notification.h; sourceTree = "<group>"; };
+		040CE5820F3EE99300FCABD0 /* Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notification.m; sourceTree = "<group>"; };
+		040CE5830F3EE99300FCABD0 /* Notifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notifier.h; sourceTree = "<group>"; };
+		040CE5840F3EE99300FCABD0 /* Notifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notifier.m; sourceTree = "<group>"; };
+		040CE5850F3EE99300FCABD0 /* Observer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Observer.h; sourceTree = "<group>"; };
+		040CE5860F3EE99300FCABD0 /* Observer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Observer.m; sourceTree = "<group>"; };
+		040CE5880F3EE99300FCABD0 /* Proxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Proxy.h; sourceTree = "<group>"; };
+		040CE5890F3EE99300FCABD0 /* Proxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Proxy.m; sourceTree = "<group>"; };
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* SimpleRSSReaderPureMVCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleRSSReaderPureMVCAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* SimpleRSSReaderPureMVCAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleRSSReaderPureMVCAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* SimpleRSSReaderPureMVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleRSSReaderPureMVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* SimpleRSSReaderPureMVC_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleRSSReaderPureMVC_Prefix.pch; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		040CE2150F3E1E9500FCABD0 /* simplerssreader */ = {
+			isa = PBXGroup;
+			children = (
+				040CE2160F3E1E9500FCABD0 /* ApplicationFacade.h */,
+				040CE2170F3E1E9500FCABD0 /* ApplicationFacade.m */,
+				040CE2180F3E1E9500FCABD0 /* controller */,
+				040CE21B0F3E1E9500FCABD0 /* model */,
+				040CE2210F3E1E9500FCABD0 /* Notifications.h */,
+				040CE2220F3E1E9500FCABD0 /* service */,
+				040CE2250F3E1E9500FCABD0 /* utils */,
+				040CE2280F3E1E9500FCABD0 /* view */,
+			);
+			name = simplerssreader;
+			path = org/puremvc/objectivec/demo/uikit/simplerssreader;
+			sourceTree = "<group>";
+		};
+		040CE2180F3E1E9500FCABD0 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				040CE2190F3E1E9500FCABD0 /* StartupCommand.h */,
+				040CE21A0F3E1E9500FCABD0 /* StartupCommand.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		040CE21B0F3E1E9500FCABD0 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				040CE21C0F3E1E9500FCABD0 /* BlogProxy.h */,
+				040CE21D0F3E1E9500FCABD0 /* BlogProxy.m */,
+				040CE21E0F3E1E9500FCABD0 /* vo */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		040CE21E0F3E1E9500FCABD0 /* vo */ = {
+			isa = PBXGroup;
+			children = (
+				040CE21F0F3E1E9500FCABD0 /* Entry.h */,
+				040CE2200F3E1E9500FCABD0 /* Entry.m */,
+			);
+			path = vo;
+			sourceTree = "<group>";
+		};
+		040CE2220F3E1E9500FCABD0 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				040CE2230F3E1E9500FCABD0 /* BlogService.h */,
+				040CE2240F3E1E9500FCABD0 /* BlogService.m */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
+		040CE2250F3E1E9500FCABD0 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				040CE2260F3E1E9500FCABD0 /* FormatterUtil.h */,
+				040CE2270F3E1E9500FCABD0 /* FormatterUtil.m */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		040CE2280F3E1E9500FCABD0 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				040CE2290F3E1E9500FCABD0 /* components */,
+				040CE22E0F3E1E9600FCABD0 /* PostViewMediator.h */,
+				040CE22F0F3E1E9600FCABD0 /* PostViewMediator.m */,
+				040CE2300F3E1E9600FCABD0 /* RootViewMediator.h */,
+				040CE2310F3E1E9600FCABD0 /* RootViewMediator.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		040CE2290F3E1E9500FCABD0 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				040CE2480F3E20EB00FCABD0 /* BlogEntryCell.h */,
+				040CE2490F3E20EB00FCABD0 /* BlogEntryCell.m */,
+				040CE22A0F3E1E9500FCABD0 /* PostViewController.h */,
+				040CE22B0F3E1E9600FCABD0 /* PostViewController.m */,
+				040CE22C0F3E1E9600FCABD0 /* RootViewController.h */,
+				040CE22D0F3E1E9600FCABD0 /* RootViewController.m */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
+		040CE33D0F3E484200FCABD0 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				040CE33E0F3E484200FCABD0 /* images */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		040CE33E0F3E484200FCABD0 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				040CE33F0F3E484200FCABD0 /* icon_app.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		040CE5620F3EE99300FCABD0 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				040CE5630F3EE99300FCABD0 /* Controller.h */,
+				040CE5640F3EE99300FCABD0 /* Controller.m */,
+				040CE5650F3EE99300FCABD0 /* Model.h */,
+				040CE5660F3EE99300FCABD0 /* Model.m */,
+				040CE5670F3EE99300FCABD0 /* View.h */,
+				040CE5680F3EE99300FCABD0 /* View.m */,
+			);
+			name = core;
+			path = Classes/org/puremvc/objectivec/core;
+			sourceTree = "<group>";
+		};
+		040CE5690F3EE99300FCABD0 /* interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				040CE56A0F3EE99300FCABD0 /* ICommand.h */,
+				040CE56B0F3EE99300FCABD0 /* IController.h */,
+				040CE56C0F3EE99300FCABD0 /* IFacade.h */,
+				040CE56D0F3EE99300FCABD0 /* IMediator.h */,
+				040CE56E0F3EE99300FCABD0 /* IModel.h */,
+				040CE56F0F3EE99300FCABD0 /* INotification.h */,
+				040CE5700F3EE99300FCABD0 /* INotifier.h */,
+				040CE5710F3EE99300FCABD0 /* IObserver.h */,
+				040CE5720F3EE99300FCABD0 /* IProxy.h */,
+				040CE5730F3EE99300FCABD0 /* IView.h */,
+			);
+			name = interfaces;
+			path = Classes/org/puremvc/objectivec/interfaces;
+			sourceTree = "<group>";
+		};
+		040CE5740F3EE99300FCABD0 /* patterns */ = {
+			isa = PBXGroup;
+			children = (
+				040CE5750F3EE99300FCABD0 /* command */,
+				040CE57A0F3EE99300FCABD0 /* facade */,
+				040CE57D0F3EE99300FCABD0 /* mediator */,
+				040CE5800F3EE99300FCABD0 /* observer */,
+				040CE5870F3EE99300FCABD0 /* proxy */,
+			);
+			name = patterns;
+			path = Classes/org/puremvc/objectivec/patterns;
+			sourceTree = "<group>";
+		};
+		040CE5750F3EE99300FCABD0 /* command */ = {
+			isa = PBXGroup;
+			children = (
+				040CE5760F3EE99300FCABD0 /* MacroCommand.h */,
+				040CE5770F3EE99300FCABD0 /* MacroCommand.m */,
+				040CE5780F3EE99300FCABD0 /* SimpleCommand.h */,
+				040CE5790F3EE99300FCABD0 /* SimpleCommand.m */,
+			);
+			path = command;
+			sourceTree = "<group>";
+		};
+		040CE57A0F3EE99300FCABD0 /* facade */ = {
+			isa = PBXGroup;
+			children = (
+				040CE57B0F3EE99300FCABD0 /* Facade.h */,
+				040CE57C0F3EE99300FCABD0 /* Facade.m */,
+			);
+			path = facade;
+			sourceTree = "<group>";
+		};
+		040CE57D0F3EE99300FCABD0 /* mediator */ = {
+			isa = PBXGroup;
+			children = (
+				040CE57E0F3EE99300FCABD0 /* Mediator.h */,
+				040CE57F0F3EE99300FCABD0 /* Mediator.m */,
+			);
+			path = mediator;
+			sourceTree = "<group>";
+		};
+		040CE5800F3EE99300FCABD0 /* observer */ = {
+			isa = PBXGroup;
+			children = (
+				040CE5810F3EE99300FCABD0 /* Notification.h */,
+				040CE5820F3EE99300FCABD0 /* Notification.m */,
+				040CE5830F3EE99300FCABD0 /* Notifier.h */,
+				040CE5840F3EE99300FCABD0 /* Notifier.m */,
+				040CE5850F3EE99300FCABD0 /* Observer.h */,
+				040CE5860F3EE99300FCABD0 /* Observer.m */,
+			);
+			path = observer;
+			sourceTree = "<group>";
+		};
+		040CE5870F3EE99300FCABD0 /* proxy */ = {
+			isa = PBXGroup;
+			children = (
+				040CE5880F3EE99300FCABD0 /* Proxy.h */,
+				040CE5890F3EE99300FCABD0 /* Proxy.m */,
+			);
+			path = proxy;
+			sourceTree = "<group>";
+		};
+		040CE5950F3EE99F00FCABD0 /* puremvc */ = {
+			isa = PBXGroup;
+			children = (
+				040CE5620F3EE99300FCABD0 /* core */,
+				040CE5690F3EE99300FCABD0 /* interfaces */,
+				040CE5740F3EE99300FCABD0 /* patterns */,
+			);
+			name = puremvc;
+			sourceTree = "<group>";
+		};
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				040CE2150F3E1E9500FCABD0 /* simplerssreader */,
+				1D3623240D0F684500981E51 /* SimpleRSSReaderPureMVCAppDelegate.h */,
+				1D3623250D0F684500981E51 /* SimpleRSSReaderPureMVCAppDelegate.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* SimpleRSSReaderPureMVC.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+				040CE2410F3E1F9000FCABD0 /* BlogEntryCell.xib */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* SimpleRSSReaderPureMVC_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				040CE33D0F3E484200FCABD0 /* Assets */,
+				040CE23C0F3E1EDE00FCABD0 /* Localizable.strings */,
+				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* Info.plist */,
+				040CE1670F3E125B00FCABD0 /* PostViewController.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				040CE5950F3EE99F00FCABD0 /* puremvc */,
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* SimpleRSSReaderPureMVC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "SimpleRSSReaderPureMVC" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimpleRSSReaderPureMVC;
+			productName = SimpleRSSReaderPureMVC;
+			productReference = 1D6058910D05DD3D006BFB54 /* SimpleRSSReaderPureMVC.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "SimpleRSSReaderPureMVC" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* SimpleRSSReaderPureMVC */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
+				040CE1680F3E125B00FCABD0 /* PostViewController.xib in Resources */,
+				040CE23D0F3E1EDE00FCABD0 /* Localizable.strings in Resources */,
+				040CE2420F3E1F9000FCABD0 /* BlogEntryCell.xib in Resources */,
+				040CE3400F3E484200FCABD0 /* icon_app.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* SimpleRSSReaderPureMVCAppDelegate.m in Sources */,
+				040CE2320F3E1E9600FCABD0 /* ApplicationFacade.m in Sources */,
+				040CE2330F3E1E9600FCABD0 /* StartupCommand.m in Sources */,
+				040CE2340F3E1E9600FCABD0 /* BlogProxy.m in Sources */,
+				040CE2350F3E1E9600FCABD0 /* Entry.m in Sources */,
+				040CE2360F3E1E9600FCABD0 /* BlogService.m in Sources */,
+				040CE2370F3E1E9600FCABD0 /* FormatterUtil.m in Sources */,
+				040CE2380F3E1E9600FCABD0 /* PostViewController.m in Sources */,
+				040CE2390F3E1E9600FCABD0 /* RootViewController.m in Sources */,
+				040CE23A0F3E1E9600FCABD0 /* PostViewMediator.m in Sources */,
+				040CE23B0F3E1E9600FCABD0 /* RootViewMediator.m in Sources */,
+				040CE24A0F3E20EB00FCABD0 /* BlogEntryCell.m in Sources */,
+				040CE58A0F3EE99300FCABD0 /* Controller.m in Sources */,
+				040CE58B0F3EE99300FCABD0 /* Model.m in Sources */,
+				040CE58C0F3EE99300FCABD0 /* View.m in Sources */,
+				040CE58D0F3EE99300FCABD0 /* MacroCommand.m in Sources */,
+				040CE58E0F3EE99300FCABD0 /* SimpleCommand.m in Sources */,
+				040CE58F0F3EE99300FCABD0 /* Facade.m in Sources */,
+				040CE5900F3EE99300FCABD0 /* Mediator.m in Sources */,
+				040CE5910F3EE99300FCABD0 /* Notification.m in Sources */,
+				040CE5920F3EE99300FCABD0 /* Notifier.m in Sources */,
+				040CE5930F3EE99300FCABD0 /* Observer.m in Sources */,
+				040CE5940F3EE99300FCABD0 /* Proxy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = SimpleRSSReaderPureMVC_Prefix.pch;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = Info.plist;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_NAME = SimpleRSSReaderPureMVC;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = SimpleRSSReaderPureMVC_Prefix.pch;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = Info.plist;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_NAME = SimpleRSSReaderPureMVC;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos2.2;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos2.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "SimpleRSSReaderPureMVC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "SimpleRSSReaderPureMVC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
