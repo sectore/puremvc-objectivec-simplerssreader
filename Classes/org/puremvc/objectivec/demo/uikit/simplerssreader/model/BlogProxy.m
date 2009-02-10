@@ -74,16 +74,16 @@
 
 -(void)startParsing
 {	
+		
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-	
-	BlogService *service = [[ BlogService alloc ] init ];
+	BlogService *service = [[ BlogService alloc ] init];
 	
 	BOOL success;
 	success = [ service getBlogData: [NSURL URLWithString: BLOG_FEED] ];
 
 	if ( success )
 	{
-		data =  service.blogEntries;
+		data =  [ service.blogEntries copy ];
 		[ self sendNotification: BLOG_POSTS_RESULT body: data ];		
 	}
 	else
@@ -91,7 +91,7 @@
 		[ self sendNotification: BLOG_POSTS_FAILED ];	
 	}
 	
-	[service release];
+	[ service release ];
 	[ pool release ];
 	
 }

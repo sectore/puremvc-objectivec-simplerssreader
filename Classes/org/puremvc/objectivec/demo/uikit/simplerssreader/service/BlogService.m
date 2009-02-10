@@ -24,11 +24,26 @@ static NSUInteger parsedItemCounter;
 
 @synthesize blogEntries;
 
+#pragma mark init && dealloc
+
+-(void)dealloc
+{
+	[ blogEntries release ];
+	[ currentElement release ];
+	[ blogTitle release ];
+	[ currentEntry release ];
+	
+	[super dealloc];
+}
+
 -(BOOL)getBlogData:(NSURL *) url
 {
 	// release previous blog entries if neccessary
 	if ( blogEntries )
-		[ blogEntries release ];
+		[ blogEntries removeAllObjects ];
+	
+	if ( currentEntry )
+		[ currentEntry release ];	
 	
 	blogEntries = [ [NSMutableArray alloc] init ];
 	
@@ -132,8 +147,7 @@ static NSUInteger parsedItemCounter;
 		//
 		// store entry
 		currentEntry.blogTitle = [[NSString alloc] initWithString:blogTitle ];
-        [ blogEntries addObject: currentEntry ];		
-        [ currentEntry release ];
+        [ blogEntries addObject: currentEntry ];
 
         return;		
     }
