@@ -13,13 +13,15 @@
  */
 
 #import <UIKit/UIKit.h>
-#import "Entry.h"
+#import "EntryVO.h"
 
 @interface PostViewController : UIViewController 
 {
 	IBOutlet UIWebView *webView;
 }
 
--(void)newBlogEntry:(Entry *) data;
++(PostViewController *)postViewController;
+
+-(void)newBlogEntry:(EntryVO *) data;
 
 @end

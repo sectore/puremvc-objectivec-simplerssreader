@@ -24,7 +24,6 @@
 
 -(void)dealloc 
 {
-	[ blogProxy release ];
 	[ super dealloc ];
 }
 
@@ -73,9 +72,6 @@
 	{
 			
 	}
-		
-	
-	[notificationName release];
 	
 }
 

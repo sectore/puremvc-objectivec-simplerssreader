@@ -17,8 +17,8 @@
 #import "BlogService.h"
 
 
-#define BLOG_FEED	@"http://www.websector.de/blog/feed/"
-//#define BLOG_FEED	@"http://localhost/ws2005/feed.xml"
+//#define BLOG_FEED	@"http://www.websector.de/blog/feed/"
+#define BLOG_FEED	@"http://localhost/ws2005/feed.xml"
 
 @implementation BlogProxy
 
@@ -26,7 +26,6 @@
 
 -(void)dealloc
 {
-	[ currentEntry release ];
 	[ super dealloc ];
 }
 
@@ -100,7 +99,7 @@
 {
 	if ( [data count] > entryId )
 	{
-		Entry *entry = [data objectAtIndex: entryId];
+		EntryVO *entry = [data objectAtIndex: entryId];
 		[ self sendNotification: BLOG_POST_DETAIL body: entry ];		
 	}
 	else

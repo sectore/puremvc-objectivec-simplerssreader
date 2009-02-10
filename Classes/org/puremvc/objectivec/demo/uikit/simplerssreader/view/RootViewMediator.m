@@ -24,7 +24,6 @@
 
 -(void)dealloc 
 {
-	[ blogProxy release ];
 	[super dealloc];
 }
 
@@ -82,8 +81,6 @@
 	{
 		[ viewComponent showBlogEntry ];		
 	}
-	
-	[notificationName release];
 
 }
 

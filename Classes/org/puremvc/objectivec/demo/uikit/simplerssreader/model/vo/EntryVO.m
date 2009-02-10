@@ -1,5 +1,5 @@
 //
-//  Post.h
+//  EntryVO.m
 //  SimpleRSSReaderPureMVC
 //
 /* 
@@ -12,16 +12,14 @@
  *
  */
 
-#import <Foundation/Foundation.h>
+#import "EntryVO.h"
 
 
-@interface Entry : NSObject 
-{
-	NSString *blogTitle;
-	NSMutableString *title, *txt, *dateString;
-}
+@implementation EntryVO
 
-@property(nonatomic, retain) NSMutableString *title, *txt, *dateString;
-@property(nonatomic, retain) NSString *blogTitle;
+@synthesize dateString;
+@synthesize title;
+@synthesize txt;
+@synthesize blogTitle;
 
 @end

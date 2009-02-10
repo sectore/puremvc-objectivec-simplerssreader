@@ -22,9 +22,13 @@
 #pragma mark --
 #pragma mark init && dealloc
 
-- (void)dealloc 
++(PostViewController *)postViewController
 {
-	[webView release];	
+	return 	 [[[PostViewController alloc] initWithNibName:@"PostViewController" bundle:nil] autorelease ];
+}
+
+- (void)dealloc 
+{	
     [super dealloc];
 }
 
@@ -54,19 +58,28 @@
 
 #define STYLE_BLOG_ENTRY @"<style type='text/css'><!--* { font-family: Arial; color: #333; font-size: 1em;}  h1 { font-size: 1.4em; } date { color: #666; font-size: .8em; } a { color:#3388BB; text-decoration:underline }--></style>"
 
--(void)newBlogEntry:(Entry *) data
+-(void)newBlogEntry:(EntryVO *) data
 {
-	[self setTitle: data.blogTitle ];
+	EntryVO *entryVO = (EntryVO *) [ data retain ];
+	
+	[self setTitle: entryVO.blogTitle ];
 
 	[webView loadHTMLString: [NSString stringWithFormat: @"%@<date>%@</date><h1>%@</h1><p>%@</p>",
 							  STYLE_BLOG_ENTRY,
-							  [ FormatterUtil formatFeedDateString:  data.dateString 
+							  [ FormatterUtil formatFeedDateString:  entryVO.dateString 
 														 newFormat: @"d'. 'MMMM' 'yyyy"],
-							  data.title,
-							  data.txt]
+							  entryVO.title,
+							  entryVO.txt]
 				baseURL:nil];
 	
+	[ entryVO release ];
+	
 
+}
+
+-(void)goBack
+{
+	[ self.navigationController popViewControllerAnimated:YES ];
 }
 
 @end

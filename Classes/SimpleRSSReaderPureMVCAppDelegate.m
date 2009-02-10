@@ -23,7 +23,6 @@
 
 - (void)dealloc 
 {
-    [window release];
     [super dealloc];
 }
 
@@ -31,15 +30,14 @@
 - (void)applicationDidFinishLaunching:(UIApplication *)application 
 {
 	
-	RootViewController *rootView = [[RootViewController alloc] init ];
+	RootViewController *rootView = [ RootViewController rootViewController ];
+	
 	UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController: rootView];
 
 	[window addSubview: nav.view];
 	[window makeKeyAndVisible];
 	
 	[[ApplicationFacade getInstance] startup: rootView];
-	
-	[rootView release];
 
 
 }

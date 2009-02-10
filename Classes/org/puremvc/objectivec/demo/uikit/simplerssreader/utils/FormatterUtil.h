@@ -15,7 +15,8 @@
 #import <Foundation/Foundation.h>
 
 
-@interface FormatterUtil : NSObject {
+@interface FormatterUtil : NSObject 
+{
 
 }
 

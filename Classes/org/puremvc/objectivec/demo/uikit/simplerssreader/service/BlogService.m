@@ -28,13 +28,25 @@ static NSUInteger parsedItemCounter;
 
 -(void)dealloc
 {
-	[ blogEntries release ];
-	[ currentElement release ];
-	[ blogTitle release ];
+	[ blogEntries release ];	
+	[ currentElement release ];	
+	[ blogTitle release ];	
 	[ currentEntry release ];
 	
 	[super dealloc];
 }
+
+-(id)init
+{
+	if (self = [super init]) 
+	{	
+		blogEntries = [ [NSMutableArray alloc] init ];		
+	}
+	return self;
+}
+
+
+
 
 -(BOOL)getBlogData:(NSURL *) url
 {
@@ -44,8 +56,6 @@ static NSUInteger parsedItemCounter;
 	
 	if ( currentEntry )
 		[ currentEntry release ];	
-	
-	blogEntries = [ [NSMutableArray alloc] init ];
 	
 	NSXMLParser *feedParser = [ [NSXMLParser alloc] initWithContentsOfURL: url ];
 	
@@ -58,8 +68,6 @@ static NSUInteger parsedItemCounter;
 	// start parsing
 	BOOL success;	
 	success = [ feedParser parse ];
-	
-	[ feedParser release ];
 	
 	return success;
 }
@@ -97,7 +105,7 @@ static NSUInteger parsedItemCounter;
     if ( [currentElement isEqual:@"item"]) 
 	{
 		parsedItemCounter++;
-		currentEntry = [[Entry alloc] init];	
+		currentEntry = [[EntryVO alloc] init];	
         return;
 	}
 	
@@ -121,15 +129,24 @@ static NSUInteger parsedItemCounter;
 		
 	if ( [currentElement isEqual:@"content:encoded"] ) 
 	{
-		[ currentEntry.txt appendString: trimmedString ];	
+		if ( !currentEntry.txt )
+			currentEntry.txt = [[NSMutableString alloc] initWithString: trimmedString];
+		else
+			[ currentEntry.txt appendString: trimmedString ];
 	}
 	else if ( [currentElement isEqual:@"pubDate"] ) 
 	{
-		[ currentEntry.dateString appendString: trimmedString ];
+		if ( !currentEntry.dateString )
+			currentEntry.dateString = [[NSMutableString alloc] initWithString: trimmedString];
+		else
+			[ currentEntry.dateString appendString: trimmedString ];
 	}
 	else if ( [currentElement isEqual:@"title"] ) 
 	{
-		[ currentEntry.title appendString: trimmedString ];	
+		if ( !currentEntry.title )
+			currentEntry.title = [[NSMutableString alloc] initWithString: trimmedString];
+		else
+			[ currentEntry.title appendString: trimmedString ];
 	}	
 	
 }

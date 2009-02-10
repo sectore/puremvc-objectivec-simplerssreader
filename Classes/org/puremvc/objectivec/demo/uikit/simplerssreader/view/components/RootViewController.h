@@ -14,7 +14,7 @@
 
 #import <UIKit/UIKit.h>
 #import "PostViewController.h"
-#import "Entry.h"
+#import "EntryVO.h"
 
 @protocol RootViewControllerDelegate
 
@@ -26,14 +26,16 @@
 
 @interface RootViewController : UITableViewController
 {	
-	PostViewController *postView;
+	PostViewController *postViewController;
 	NSMutableArray *blogEntries;
 	id<RootViewControllerDelegate> delegate;
 	UIActivityIndicatorView *feedLoader;
 }
 
-@property(nonatomic, retain) PostViewController *postView;
+@property(nonatomic, retain) PostViewController *postViewController;
 @property(nonatomic, retain) id<RootViewControllerDelegate> delegate;
+
++(RootViewController *)rootViewController;
 
 -(void)showBlogEntry;
 -(void)getBlogEntries;

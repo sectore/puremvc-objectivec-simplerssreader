@@ -1,5 +1,5 @@
 //
-//  BlogService.h
+//  EntryVO.h
 //  SimpleRSSReaderPureMVC
 //
 /* 
@@ -13,20 +13,15 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "EntryVO.h"
-#import "BlogProxy.h"
 
 
-@interface BlogService : NSObject <IBlogService>
+@interface EntryVO : NSObject 
 {
-	NSString * currentElement;
-	NSMutableString * blogTitle;	
-	EntryVO *currentEntry;
-	NSMutableArray *blogEntries;
+	NSString *blogTitle;
+	NSMutableString *title, *txt, *dateString;
 }
 
-@property(nonatomic, retain) NSMutableArray *blogEntries;
-
--(BOOL) getBlogData:(NSURL *) url;
+@property(nonatomic, retain) NSMutableString *title, *txt, *dateString;
+@property(nonatomic, retain) NSString *blogTitle;
 
 @end

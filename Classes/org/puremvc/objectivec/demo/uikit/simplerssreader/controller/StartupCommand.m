@@ -31,13 +31,11 @@
 	// register mediators
 	RootViewController *rootView = [notification body];
 	[ facade registerMediator: [ RootViewMediator withViewComponent: rootView ] ];
-	[ facade registerMediator: [ PostViewMediator withViewComponent: rootView.postView ] ];
+	[ facade registerMediator: [ PostViewMediator withViewComponent: rootView.postViewController ] ];
 	
 	//
 	// get first data
 	[ blogProxy getAllEntries ];
-	
-	[rootView release];
 }
 
 @end

@@ -14,7 +14,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Proxy.h"
-#import "Entry.h"
+#import "EntryVO.h"
 
 
 @protocol IBlogService
@@ -24,7 +24,7 @@
 
 @interface BlogProxy : Proxy 
 {
-	Entry *currentEntry;
+
 }
 
 -(void)getAllEntries;

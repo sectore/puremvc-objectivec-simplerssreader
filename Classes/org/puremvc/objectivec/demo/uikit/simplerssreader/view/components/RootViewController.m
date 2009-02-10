@@ -13,17 +13,23 @@
  */
 
 #import "RootViewController.h"
-#import "Entry.h"
+#import "EntryVO.h"
 #import "BlogEntryCell.h"
 #import "FormatterUtil.h"
 
 @implementation RootViewController
 
-@synthesize postView;
+@synthesize postViewController;
 @synthesize delegate;
 
 
 #pragma mark init && dealloc
+
++(RootViewController *)rootViewController
+{
+	return 	[[[RootViewController alloc] init ] autorelease ];
+}
+
 
 -(id)init
 {
@@ -36,9 +42,7 @@
 
 - (void)dealloc 
 {
-	[ feedLoader release ];
 	[ blogEntries release ];
-	[ postView release ];
     [super dealloc];
 }
 
@@ -61,8 +65,7 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad 
 {
-	postView = [ [PostViewController alloc] initWithNibName:@"PostViewController" 
-											bundle:nil];	
+	postViewController = [PostViewController postViewController];	
 	
     [super viewDidLoad];
 
@@ -94,6 +97,7 @@
 	[ feedLoader stopAnimating];
 	[ feedLoader removeFromSuperview ];
 	[ feedLoader release ];	
+	feedLoader = nil;	
 }
 
 
@@ -141,14 +145,14 @@
     
 	if ( [ blogEntries count ] > 0 )
 	{
-		Entry *entry = [ blogEntries objectAtIndex: row ];
+		EntryVO *entryVO = [ blogEntries objectAtIndex: row ];
 		// headline
 		cell.headline.text = [NSString stringWithFormat: @"%@ // %@", 
-														entry.blogTitle,
-														[ FormatterUtil formatFeedDateString: entry.dateString 
+														entryVO.blogTitle,
+														[ FormatterUtil formatFeedDateString: entryVO.dateString 
 																				newFormat: @"d'.'MM'.'yyyy"] 
 														] ;
-		cell.label.text = entry.title;
+		cell.label.text = entryVO.title;
 	}
 	else
 	{
@@ -170,7 +174,7 @@
 
 -(void)showBlogEntry
 {	
-	[[self navigationController] pushViewController:postView
+	[[self navigationController] pushViewController:postViewController
 										   animated:YES];
 }
 
@@ -183,9 +187,12 @@
 
 -(void)showBlogEntries:(NSMutableArray *)data
 {
-	[self hideLoader ];
 	
+	[ data retain ];
+	[ blogEntries release ];
 	blogEntries = data;	
+
+	[self hideLoader ];
 	[ self.tableView reloadData ];
 }
 

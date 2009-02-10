@@ -11,7 +11,7 @@
 		040CE2320F3E1E9600FCABD0 /* ApplicationFacade.m in Sources */ = {isa = PBXBuildFile; fileRef = 040CE2170F3E1E9500FCABD0 /* ApplicationFacade.m */; };
 		040CE2330F3E1E9600FCABD0 /* StartupCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 040CE21A0F3E1E9500FCABD0 /* StartupCommand.m */; };
 		040CE2340F3E1E9600FCABD0 /* BlogProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 040CE21D0F3E1E9500FCABD0 /* BlogProxy.m */; };
-		040CE2350F3E1E9600FCABD0 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = 040CE2200F3E1E9500FCABD0 /* Entry.m */; };
+		040CE2350F3E1E9600FCABD0 /* EntryVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 040CE2200F3E1E9500FCABD0 /* EntryVO.m */; };
 		040CE2360F3E1E9600FCABD0 /* BlogService.m in Sources */ = {isa = PBXBuildFile; fileRef = 040CE2240F3E1E9500FCABD0 /* BlogService.m */; };
 		040CE2370F3E1E9600FCABD0 /* FormatterUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 040CE2270F3E1E9500FCABD0 /* FormatterUtil.m */; };
 		040CE2380F3E1E9600FCABD0 /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040CE22B0F3E1E9600FCABD0 /* PostViewController.m */; };
@@ -49,8 +49,8 @@
 		040CE21A0F3E1E9500FCABD0 /* StartupCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartupCommand.m; sourceTree = "<group>"; };
 		040CE21C0F3E1E9500FCABD0 /* BlogProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogProxy.h; sourceTree = "<group>"; };
 		040CE21D0F3E1E9500FCABD0 /* BlogProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogProxy.m; sourceTree = "<group>"; };
-		040CE21F0F3E1E9500FCABD0 /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = "<group>"; };
-		040CE2200F3E1E9500FCABD0 /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
+		040CE21F0F3E1E9500FCABD0 /* EntryVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntryVO.h; sourceTree = "<group>"; };
+		040CE2200F3E1E9500FCABD0 /* EntryVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntryVO.m; sourceTree = "<group>"; };
 		040CE2210F3E1E9500FCABD0 /* Notifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notifications.h; sourceTree = "<group>"; };
 		040CE2230F3E1E9500FCABD0 /* BlogService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogService.h; sourceTree = "<group>"; };
 		040CE2240F3E1E9500FCABD0 /* BlogService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogService.m; sourceTree = "<group>"; };
@@ -165,8 +165,8 @@
 		040CE21E0F3E1E9500FCABD0 /* vo */ = {
 			isa = PBXGroup;
 			children = (
-				040CE21F0F3E1E9500FCABD0 /* Entry.h */,
-				040CE2200F3E1E9500FCABD0 /* Entry.m */,
+				040CE21F0F3E1E9500FCABD0 /* EntryVO.h */,
+				040CE2200F3E1E9500FCABD0 /* EntryVO.m */,
 			);
 			path = vo;
 			sourceTree = "<group>";
@@ -461,7 +461,7 @@
 				040CE2320F3E1E9600FCABD0 /* ApplicationFacade.m in Sources */,
 				040CE2330F3E1E9600FCABD0 /* StartupCommand.m in Sources */,
 				040CE2340F3E1E9600FCABD0 /* BlogProxy.m in Sources */,
-				040CE2350F3E1E9600FCABD0 /* Entry.m in Sources */,
+				040CE2350F3E1E9600FCABD0 /* EntryVO.m in Sources */,
 				040CE2360F3E1E9600FCABD0 /* BlogService.m in Sources */,
 				040CE2370F3E1E9600FCABD0 /* FormatterUtil.m in Sources */,
 				040CE2380F3E1E9600FCABD0 /* PostViewController.m in Sources */,

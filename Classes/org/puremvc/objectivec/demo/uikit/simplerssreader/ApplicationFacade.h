@@ -16,8 +16,7 @@
 #import "Facade.h"
 
 @interface ApplicationFacade : Facade 
-{
-	
+{	
 
 }
 
