@@ -38,6 +38,8 @@
 	[window makeKeyAndVisible];
 	
 	[[ApplicationFacade getInstance] startup: rootView];
+	
+	[ nav release ];
 
 
 }

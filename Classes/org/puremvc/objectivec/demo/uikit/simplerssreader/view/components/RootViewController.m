@@ -43,6 +43,7 @@
 - (void)dealloc 
 {
 	[ blogEntries release ];
+	[ feedLoader release ];	
     [super dealloc];
 }
 

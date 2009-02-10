@@ -22,4 +22,14 @@
 @synthesize txt;
 @synthesize blogTitle;
 
+-(void) dealloc
+{
+	[ dateString release ];
+	[ dateString title ];
+	[ dateString txt ];
+	[ dateString blogTitle ];
+	
+	[ super dealloc ];
+}
+
 @end

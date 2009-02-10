@@ -28,6 +28,7 @@
 	// we have to force the locale to avoid unexpected issues formatting data, e.g. on an German iPhone ;)
 	NSLocale *usLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
 	[dateFormatter setLocale:usLocale];
+
 	
 	[dateFormatter setDateFormat:@"EEE, dd MMM yyyy HH:mm:ss Z"];
 
@@ -47,7 +48,13 @@
 	NSString *formattedDateString = [outputFormatter stringFromDate:formattedDate];
 	
 	[dateFormatter release];
+	dateFormatter = nil;
+
+	[ usLocale release ];
+	usLocale = nil;
+	
 	[outputFormatter release];
+	outputFormatter = nil;
 	
 	return formattedDateString;
 
