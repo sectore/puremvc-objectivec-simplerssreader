@@ -51,7 +51,7 @@
 
 -(void)onRegister 
 {
-	self.viewComponent.delegate = self;
+	[ self.viewComponent setDelegate: self ];
 }
 
 #pragma mark notifications methods

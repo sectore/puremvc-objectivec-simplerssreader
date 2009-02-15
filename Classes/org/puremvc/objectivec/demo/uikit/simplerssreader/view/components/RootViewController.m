@@ -44,6 +44,10 @@
 {
 	[ blogEntries release ];
 	[ feedLoader release ];	
+	
+	[ postViewController release ];
+	[ delegate release ];
+	
     [super dealloc];
 }
 

@@ -19,8 +19,8 @@
 
 @interface BlogService : NSObject <IBlogService>
 {
-	NSString * currentElement;
-	NSMutableString * blogTitle;	
+	NSString *currentElement;
+	NSMutableString *blogTitle, *currentEntryVOProperty;	
 	EntryVO *currentEntry;
 	NSMutableArray *blogEntries;
 }

@@ -78,9 +78,7 @@
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	BlogService *service = [[ BlogService alloc ] init];
 	
-	BOOL success;
-	
-	success = [ service getBlogData: [NSURL URLWithString: BLOG_FEED] ];
+	BOOL success = [ service getBlogData: [NSURL URLWithString: BLOG_FEED] ];
 
 	if ( success )
 	{
