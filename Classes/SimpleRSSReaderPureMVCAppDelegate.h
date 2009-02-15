@@ -17,9 +17,11 @@
 @interface SimpleRSSReaderPureMVCAppDelegate : NSObject <UIApplicationDelegate> 
 {
     UIWindow *window;
+	UINavigationController *nav;	
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
+@property (nonatomic, retain) UINavigationController *nav;
 
 @end
 

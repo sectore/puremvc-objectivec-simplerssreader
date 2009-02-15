@@ -20,10 +20,13 @@
 @implementation SimpleRSSReaderPureMVCAppDelegate
 
 @synthesize window;
+@synthesize nav;
 
 - (void)dealloc 
 {
-    [super dealloc];
+	[ nav release ];
+    [ window release ];
+    [ super dealloc ];
 }
 
 
@@ -31,16 +34,12 @@
 {
 	
 	RootViewController *rootView = [ RootViewController rootViewController ];
-	
-	UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController: rootView];
+	nav = [[UINavigationController alloc] initWithRootViewController: rootView];
 
 	[window addSubview: nav.view];
 	[window makeKeyAndVisible];
 	
 	[[ApplicationFacade getInstance] startup: rootView];
-	
-	[ nav release ];
-
 
 }
 

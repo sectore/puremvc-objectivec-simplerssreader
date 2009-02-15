@@ -40,7 +40,7 @@ static NSUInteger parsedItemCounter;
 {
 	if (self = [super init]) 
 	{	
-		blogEntries = [ [NSMutableArray alloc] init ];		
+				
 	}
 	return self;
 }
@@ -51,11 +51,15 @@ static NSUInteger parsedItemCounter;
 -(BOOL)getBlogData:(NSURL *) url
 {
 	// release previous blog entries if neccessary
-	if ( blogEntries )
-		[ blogEntries removeAllObjects ];
-	
-	if ( currentEntry )
-		[ currentEntry release ];	
+	if ( !blogEntries )
+	{
+		blogEntries = [ [NSMutableArray alloc] init ];
+	}
+	else
+	{
+		[ blogEntries removeAllObjects ];	
+	}
+
 	
 	NSXMLParser *feedParser = [ [NSXMLParser alloc] initWithContentsOfURL: url ];
 	
@@ -68,6 +72,8 @@ static NSUInteger parsedItemCounter;
 	// start parsing
 	BOOL success;	
 	success = [ feedParser parse ];
+
+	[ feedParser release ];
 	
 	return success;
 }
@@ -91,14 +97,14 @@ static NSUInteger parsedItemCounter;
 
 	if ( parsedItemCounter > MAX_ENTRIES ) 
 	{
-        [parser abortParsing];
+        [ parser abortParsing ];
     }
 
 	currentElement = [elementName copy];
 
 	if ( !blogTitle && [currentElement isEqual:@"title"]) 
 	{
-		blogTitle = [[NSMutableString alloc] init];
+		blogTitle = [ [NSMutableString alloc] init ];
         return;
 	}
 	
@@ -133,13 +139,14 @@ static NSUInteger parsedItemCounter;
 			currentEntry.txt = [[NSMutableString alloc] initWithString: trimmedString];
 		else
 			[ currentEntry.txt appendString: trimmedString ];
+
 	}
 	else if ( [currentElement isEqual:@"pubDate"] ) 
 	{
 		if ( !currentEntry.dateString )
 			currentEntry.dateString = [[NSMutableString alloc] initWithString: trimmedString];
 		else
-			[ currentEntry.dateString appendString: trimmedString ];
+			[ currentEntry.dateString appendString: trimmedString ];		
 	}
 	else if ( [currentElement isEqual:@"title"] ) 
 	{
@@ -165,7 +172,7 @@ static NSUInteger parsedItemCounter;
 		// store entry
 		currentEntry.blogTitle = [[NSString alloc] initWithString:blogTitle ];
         [ blogEntries addObject: currentEntry ];
-
+		
         return;		
     }
 	

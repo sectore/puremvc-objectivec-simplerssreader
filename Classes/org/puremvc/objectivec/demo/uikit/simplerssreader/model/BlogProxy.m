@@ -17,8 +17,8 @@
 #import "BlogService.h"
 
 
-//#define BLOG_FEED	@"http://www.websector.de/blog/feed/"
-#define BLOG_FEED	@"http://localhost/ws2005/feed.xml"
+#define BLOG_FEED	@"http://www.websector.de/blog/feed/"
+//#define BLOG_FEED	@"http://localhost/ws2005/feed.xml"
 
 @implementation BlogProxy
 
@@ -26,6 +26,7 @@
 
 -(void)dealloc
 {
+	[ data release ];
 	[ super dealloc ];
 }
 
@@ -35,7 +36,7 @@
 {
 	[super initializeProxy];
 	self.proxyName = [BlogProxy NAME];
-	self.data = [NSMutableArray array];
+	self.data = [[NSMutableArray alloc] init ];
 
 }
 
@@ -78,16 +79,17 @@
 	BlogService *service = [[ BlogService alloc ] init];
 	
 	BOOL success;
+	
 	success = [ service getBlogData: [NSURL URLWithString: BLOG_FEED] ];
 
 	if ( success )
 	{
-		data =  [ service.blogEntries copy ];
+		data = service.blogEntries;
 		[ self sendNotification: BLOG_POSTS_RESULT body: data ];		
 	}
 	else
 	{
-		[ self sendNotification: BLOG_POSTS_FAILED ];	
+		[ self sendNotification: BLOG_POSTS_FAILED ];
 	}
 	
 	[ service release ];

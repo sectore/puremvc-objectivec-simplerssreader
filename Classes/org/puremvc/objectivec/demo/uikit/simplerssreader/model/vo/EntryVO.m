@@ -25,9 +25,9 @@
 -(void) dealloc
 {
 	[ dateString release ];
-	[ dateString title ];
-	[ dateString txt ];
-	[ dateString blogTitle ];
+	[ title release ];
+	[ txt release ];
+	[ blogTitle release ];
 	
 	[ super dealloc ];
 }
