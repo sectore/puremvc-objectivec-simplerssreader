@@ -19,6 +19,8 @@
 #import "BlogService.h"
 
 static NSUInteger parsedItemCounter;
+static NSSet *interestingKeys;
+
 
 @implementation BlogService
 
@@ -28,39 +30,45 @@ static NSUInteger parsedItemCounter;
 
 -(void)dealloc
 {
-	[ blogEntries release ];	
-	blogEntries = nil;
-	
-	[ currentElement release ];	
-	[ currentEntry release ];
+	[ blogEntries release ];
 	[ blogTitle release ];
-	[ currentEntryVOProperty release ];
 	
 	[super dealloc];
 }
 
--(id)init
+
++ (void)initialize
 {
-	if (self = [super init]) 
-	{	
-		currentEntryVOProperty = [[NSMutableString alloc] init];
-		blogEntries = [ [NSMutableArray alloc] init ];
-	}
-	return self;
+    if ( !interestingKeys ) 
+	{
+        interestingKeys = [ [NSSet alloc] initWithObjects:	@"title",
+															@"content:encoded",
+															@"pubDate",
+															nil];
+    }
 }
-
-
 
 
 -(BOOL)getBlogData:(NSURL *) url
 {
-	// release previous blog entries if neccessary
-	if ( blogEntries )
-		[ blogEntries removeAllObjects ];
 
+	[ blogEntries release ];
+	blogEntries = [ [NSMutableArray alloc] init ];
+	
+//	NSLog( @"1. retainCount of: %i",[url retainCount] );
+	
+	//
+	// Note: It seems, that NSXMLParser is causing a leak
+	// @see: http://www.iphonedevsdk.com/forum/iphone-sdk-development/3174-memory-leak.html#post41589
+	// The following "solution" doesn't work :-(	
+	[[NSURLCache sharedURLCache] setMemoryCapacity:0];
+	[[NSURLCache sharedURLCache] setDiskCapacity:0];
 	
 	NSXMLParser *feedParser = [ [NSXMLParser alloc] initWithContentsOfURL: url ];
 	
+//	NSLog( @"2. retainCount of: %i",[url retainCount] );
+	
+
     [ feedParser setDelegate: self ];	
     [ feedParser setShouldProcessNamespaces: NO ];
     [ feedParser setShouldReportNamespacePrefixes: NO ];
@@ -98,28 +106,19 @@ static NSUInteger parsedItemCounter;
         [ parser abortParsing ];
     }
 
-	currentElement = [elementName copy];
-
-	if ( [currentElement isEqual:@"title"] 
-		|| [currentElement isEqual:@"content:encoded"]
-		|| [currentElement isEqual:@"pubDate"]
-		|| [currentElement isEqual:@"title"] )
-	{
-		currentEntryVOProperty = [ [NSMutableString alloc] init];
-		return;
-	}
-	else
-	{
-		[ currentEntryVOProperty release ];
-		currentEntryVOProperty = nil;
-	}
-	
-    if ( [currentElement isEqual:@"item"]) 
+    if ( [elementName isEqual:@"item"]) 
 	{
 		parsedItemCounter++;
 		currentEntry = [[EntryVO alloc] init];	
         return;
 	}
+
+
+    if ( [interestingKeys containsObject:elementName] ) 
+	{
+        keyInProgress = [elementName copy];
+        textInProgress = [[NSMutableString alloc] init];
+    }
 	
 }
 
@@ -128,9 +127,7 @@ static NSUInteger parsedItemCounter;
 - (void)parser:(NSXMLParser *)parser 
 		foundCharacters:(NSString *)value 
 {
-	if ( currentEntryVOProperty )
-		[ currentEntryVOProperty appendString: [value stringByTrimmingCharactersInSet: [ NSCharacterSet whitespaceAndNewlineCharacterSet ] ] ];	
-	//[ currentEntryVOProperty appendString: value ];	
+	[ textInProgress appendString: value ];	
 }
 
 
@@ -140,38 +137,56 @@ static NSUInteger parsedItemCounter;
 		qualifiedName:(NSString *)qName 
 {
 	
-	// the title of the entire blog - not of the post entry
-	if ( [currentElement isEqual:@"title"] && !blogTitle )
+	// store title of the entire blog - not of the post entry
+	// Note: We have to different @"title", because within XML data twice.
+	if ( [ elementName isEqual:@"title" ] && blogTitle == nil )
 	{
-		blogTitle = [ [NSMutableString alloc] initWithString: currentEntryVOProperty];
+		[ blogTitle release ];
+		
+		blogTitle = [ [NSMutableString alloc] initWithString: textInProgress];
 			
 		return;
 	}
 	
 	
-	if ( [currentElement isEqual:@"content:encoded"] ) 
-	{
-		currentEntry.txt = currentEntryVOProperty;		
-	}
-	else if ( [currentElement isEqual:@"pubDate"] ) 
-	{
-		currentEntry.dateString = currentEntryVOProperty;
-	}
-	else if ( [currentElement isEqual:@"title"] ) 
-	{
-		currentEntry.title = currentEntryVOProperty;
-	}
-	else if ( [ elementName isEqual:@"item"] ) 
+	if ( [ elementName isEqual:@"item"] ) 
 	{
 		//
 		// store entry
-		currentEntry.blogTitle = [[NSString alloc] initWithString:blogTitle ];
+		currentEntry.blogTitle = [ blogTitle copy ];
         [ blogEntries addObject: currentEntry ];
 		
 		[ currentEntry release ];
 		currentEntry = nil;
 		
+		return;
+		
     }
+	
+	
+	if ( [ elementName isEqual:keyInProgress ])
+	{
+		if ( [elementName isEqual:@"content:encoded"] ) 
+		{
+			currentEntry.txt = textInProgress;		
+		}
+		else if ( [elementName isEqual:@"pubDate"] ) 
+		{
+			currentEntry.dateString = textInProgress;
+		}
+		else if ( [elementName isEqual:@"title"] ) 
+		{
+			currentEntry.title = textInProgress;
+		}
+
+		[ textInProgress release ];
+		textInProgress = nil;
+		
+		[ keyInProgress release ];
+		keyInProgress = nil;
+	}
+	
+	
 	else 
 	{
 		//NSLog(@"uneeded XML element to store: %@", elementName);

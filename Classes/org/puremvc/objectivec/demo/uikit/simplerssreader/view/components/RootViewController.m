@@ -192,10 +192,8 @@
 
 -(void)showBlogEntries:(NSMutableArray *)data
 {
-	
-	[ data retain ];
 	[ blogEntries release ];
-	blogEntries = data;	
+	blogEntries = [ data retain ];	
 
 	[self hideLoader ];
 	[ self.tableView reloadData ];

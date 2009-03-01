@@ -19,13 +19,14 @@
 
 @interface BlogService : NSObject <IBlogService>
 {
-	NSString *currentElement;
-	NSMutableString *blogTitle, *currentEntryVOProperty;	
+	NSString *keyInProgress;
+	NSMutableString *blogTitle, *textInProgress;
+	
 	EntryVO *currentEntry;
 	NSMutableArray *blogEntries;
 }
 
-@property(nonatomic, retain) NSMutableArray *blogEntries;
+@property( copy ) NSMutableArray *blogEntries;
 
 -(BOOL) getBlogData:(NSURL *) url;
 

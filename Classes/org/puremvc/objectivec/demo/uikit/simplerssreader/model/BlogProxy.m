@@ -26,7 +26,6 @@
 
 -(void)dealloc
 {
-	[ data release ];
 	[ super dealloc ];
 }
 
@@ -36,8 +35,6 @@
 {
 	[super initializeProxy];
 	self.proxyName = [BlogProxy NAME];
-	self.data = [[NSMutableArray alloc] init ];
-
 }
 
 +(NSString *)NAME 
@@ -59,8 +56,14 @@
 {	
 	//
 	// clear data
-	[ data removeAllObjects ];
-	//[ self getBlogData ];
+	[ data release ];
+	
+	
+	NSLog(@"getAllEntries");
+	
+	[[NSURLCache sharedURLCache] setMemoryCapacity:0];
+	[[NSURLCache sharedURLCache] setDiskCapacity:0];
+	
 	
 	// 
 	// Spawn a thread to fetch all needed data without freezing the UI
@@ -75,10 +78,12 @@
 -(void)startParsing
 {	
 		
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-	BlogService *service = [[ BlogService alloc ] init];
+	NSAutoreleasePool *pool = [[ NSAutoreleasePool alloc ] init ];
 	
-	BOOL success = [ service getBlogData: [NSURL URLWithString: BLOG_FEED] ];
+	BlogService *service = [[ BlogService alloc ] init ];
+	
+	BOOL success;
+	success = [ service getBlogData: [NSURL URLWithString: BLOG_FEED] ];
 
 	if ( success )
 	{
@@ -91,6 +96,7 @@
 	}
 	
 	[ service release ];
+	[ pool drain ];
 	[ pool release ];
 	
 }
@@ -99,7 +105,7 @@
 {
 	if ( [data count] > entryId )
 	{
-		EntryVO *entry = [data objectAtIndex: entryId];
+		EntryVO *entry = [[ data objectAtIndex: entryId] autorelease ];
 		[ self sendNotification: BLOG_POST_DETAIL body: entry ];		
 	}
 	else
