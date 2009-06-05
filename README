@@ -4,4 +4,8 @@ Simple RSS reader for iPhone using PureMVC Standard for Objective-C
 @see:		http://www.websector.de/blog/
 @date:		02/07/09
 
+Note: If you get an Error "CodeSign error: a valid provisioning profile is required", you may need to run and build this app you may need a valid provisioning profile. Check for more information this: http://iphonesdkdev.blogspot.com/2009/01/codesign-error-valid-provisioning.html 
+
+Licensed under the Mozilla Public License 1.1. (http://www.mozilla.org/MPL/MPL-1.1.html)
+
 Have fun!
