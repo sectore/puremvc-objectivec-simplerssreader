@@ -105,8 +105,9 @@
 {
 	if ( [data count] > entryId )
 	{
-		EntryVO *entry = [[ data objectAtIndex: entryId] autorelease ];
+		EntryVO *entry = [ data objectAtIndex: entryId ];
 		[ self sendNotification: BLOG_POST_DETAIL body: entry ];		
+
 	}
 	else
 	{
