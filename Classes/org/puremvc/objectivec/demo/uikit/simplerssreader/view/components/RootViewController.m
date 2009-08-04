@@ -36,6 +36,8 @@
 	if (self = [super init]) 
 	{	
 		blogEntries = [[ NSMutableArray alloc ] init ];
+		
+		postViewController = [PostViewController postViewController];
 	}
 	return self;
 }
@@ -70,7 +72,7 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad 
 {
-	postViewController = [PostViewController postViewController];	
+	
 	
     [super viewDidLoad];
 
