@@ -20,6 +20,7 @@
 @implementation PostViewMediator
 
 
+#pragma -
 #pragma mark init dealloc
 
 -(void)dealloc 
@@ -28,8 +29,8 @@
 }
 
 
+#pragma -
 #pragma mark mediator methods
-
 
 +(NSString *)NAME 
 {
@@ -51,6 +52,7 @@
 {
 }
 
+#pragma -
 #pragma mark notifications methods
 
 -(NSArray *)listNotificationInterests 

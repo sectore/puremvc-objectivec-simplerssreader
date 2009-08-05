@@ -23,6 +23,7 @@
 @synthesize delegate;
 
 
+#pragma -
 #pragma mark init && dealloc
 
 +(RootViewController *)rootViewController
@@ -72,7 +73,6 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad 
 {
-	
 	
     [super viewDidLoad];
 
@@ -177,7 +177,8 @@
 	[ self.delegate getBlogEntry:row ];
 }
 
-#pragma mark methods which are calling by its mediator
+#pragma -
+#pragma mark methods which are called by its mediator
 
 -(void)showBlogEntry
 {	

@@ -19,7 +19,7 @@
 @implementation PostViewController
 
 
-#pragma mark --
+#pragma mark -
 #pragma mark init && dealloc
 
 +(PostViewController *)postViewController
@@ -53,8 +53,8 @@
 	return YES;
 }
 
-#pragma mark methods which are calling by its mediator
-
+#pragma -
+#pragma mark methods which are called by its mediator
 
 #define STYLE_BLOG_ENTRY @"<style type='text/css'><!--* { font-family: Arial; color: #333; font-size: 1em;}  h1 { font-size: 1.4em; } date { color: #666; font-size: .8em; } a { color:#3388BB; text-decoration:underline }--></style>"
 
@@ -75,11 +75,6 @@
 	[ entryVO release ];
 	
 
-}
-
--(void)goBack
-{
-	[ self.navigationController popViewControllerAnimated:YES ];
 }
 
 @end

@@ -79,7 +79,7 @@
 	}	
 	else if ([notificationName isEqual: BLOG_POST_DETAIL ]) 
 	{
-		[ viewComponent showBlogEntry ];		
+		[ viewComponent showBlogEntry ];
 	}
 
 }
